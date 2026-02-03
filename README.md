@@ -158,4 +158,9 @@ namespace ModChecker
         public void Init(ModCheckerMod p) { parent = p; }
         void OnGUI() { parent?.DrawWindow(); }
     }
+}:root {
+  --mod-checker-color: rgb(33, 150, 243); /* Material Blue 500 */
 }
+
+.mod-checker { color: var(--mod-checker-color); }
+.mod-checker--bg { background-color: var(--mod-checker-color); color: #000; }
