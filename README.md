@@ -164,3 +164,19 @@ namespace ModChecker
 
 .mod-checker { color: var(--mod-checker-color); }
 .mod-checker--bg { background-color: var(--mod-checker-color); color: #000; }
+using UnityEngine;
+
+public class ToggleModChecker : MonoBehaviour
+{
+    public GameObject modCheckerUI; // assign in Inspector
+
+    void Update()
+    {
+        // Xbox controller mapping: A=0, B=1, X=2, Y=3 -> JoystickButton3
+        if (Input.GetKeyDown(KeyCode.JoystickButton3) || Input.GetKeyDown(KeyCode.Y))
+        {
+            if (modCheckerUI != null)
+                modCheckerUI.SetActive(!modCheckerUI.activeSelf);
+        }
+    }
+}
